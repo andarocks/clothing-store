@@ -1,7 +1,14 @@
-import logo from './logo.svg';
-
+import CategoryItem from './components/category-item';
+import './categories.styles.scss';
+import categories from './categories.json';
 const App = () => {
-  return <div>Hello World</div>;
+  return (
+    <div className="categories-container">
+      {categories.map((category) => {
+        return <CategoryItem title={category.title} key={category.id} imgUrl={category.imageUrl} />;
+      })}
+    </div>
+  );
 };
 
 export default App;
