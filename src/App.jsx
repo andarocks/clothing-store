@@ -1,10 +1,20 @@
-import Categories from './components/category-directory';
+import { Routes, Route } from 'react-router-dom';
+
+import Home from './routes/home';
+import Navigation from './routes/nagivation';
+
+const Shop = () => {
+  return <h1>I am shop page</h1>;
+};
 
 const App = () => {
   return (
-    <div>
-      <Categories />
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+      </Route>
+    </Routes>
   );
 };
 
